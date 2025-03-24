@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/4c86dbce13.js" crossorigin="anonymous"></script>
+  <title>Demo Điện Máy Xanh Web</title>
+  <style>
+  
+  
+  main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  #cart-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  #cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  #cart-table th,
+  #cart-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+  }
+  
+  #cart-table th {
+    background-color: #f2f2f2;
+  }
+  
+  #cart-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  #cart-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  #cart-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+  }
+  
+  #cart-total {
+    font-size: 1.5em;
+    color: #333;
+  }
+  
+  button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  /* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Input Fields */
+input, textarea, select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Button */
+button#confirm-payment {
+  background-color: #28a745;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#confirm-payment:hover {
+  background-color: #218838;
+}
+.modal {
+  display: none; /* Mặc định ẩn */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+  </style>
+</head>
+<body>
+  <!-- Logo và thanh tìm kiếm -->
+  <div class="box-top-logo">
+    <a href="index.html" id="logo-link">
+      <img src="image/logo.png" alt="Logo" />
+    </a>
+        <input class="search" type="text" placeholder="Bạn tìm gì" />
+    <label class="button-top">Lịch sử đơn hàng</label>
+    <div id="menuNguoiDung">
+      <!-- Nút Tài khoản -->
+      <a href="#" id="nutTaiKhoan" class="nut-chinh">
+        <i class="fa fa-user"></i>
+        <span id="tenTaiKhoan">Tài khoản</span>
+        <i class="fa fa-chevron-down"></i>
+      </a>
+
+      <!-- Menu khi chưa đăng nhập -->
+      <div id="menuChuaDangNhap" class="menu-noi-dung">
+        <a href="login.html" id="dangNhapLink" class="nut-chinh">
+          <i class="fa fa-sign-in"></i> Đăng nhập
+        </a>
+        <a href="sigup.html" id="dangKyLink" class="nut-chinh">
+          <i class="fa fa-user-plus"></i> Đăng ký
+        </a>
+      </div>
+
+      <!-- Menu sau khi đăng nhập -->
+      <div id="menuDaDangNhap" class="menu-noi-dung">
+        <div class="menu-header">
+          <i class="fa fa-user-circle"></i>
+          <span id="tenNguoiDungHienThi">Tên người dùng</span>
+        </div>
+        <a href="taikhoancuatoi.html">
+          <i class="fa fa-user-circle"></i> Tài khoản của tôi
+        </a>
+        <a href="donhangdamua.html">
+          <i class="fa fa-briefcase"></i> Đơn hàng đã mua
+        </a>
+        <button id="nutDangXuat">
+          <i class="fa fa-sign-out-alt"></i> Thoát tài khoản
+        </button>
+      </div>
+    </div>
+
+    <!-- Giỏ hàng -->
+    <label class="button-top">
+      <a href="cart.html">
+      <i class="fa fa-cart-shopping"></i> Giỏ hàng (<span id="cart-counter">0</span>) </a>
+    </label>
+  </div>
+
+  <!-- Menu danh mục sản phẩm -->
+  <div class="box-menu">
+    <span class="button-menu">
+      <a href="#"><i class="fa-solid fa-bars"></i>&nbsp Tất cả danh mục |</a>
+      <ul class="menu-list">
+        <li data-category="Tivi">Tivi</li>
+        <li data-category="Tủ lạnh">Tủ lạnh</li>
+        <li data-category="Máy giặt">Máy giặt</li>
+        <li data-category="Máy nước nóng">Máy nước nóng</li>
+        <li data-category="Nồi cơm điện">Nồi cơm điện</li>
+        <li data-category="Máy lọc nước">Máy lọc nước</li>
+        <li data-category="Nồi chiên">Nồi chiên</li>
+        <li data-category="Laptop">Laptop</li>
+        <li data-category="Điện thoại">Điện thoại</li>
+        <li data-category="Đồ gia dụng">Đồ gia dụng</li>
+      </ul>
+    </span>
+    <a href="#" data-category="Tivi">Tivi</a>
+    <a href="#" data-category="Tủ lạnh">Tủ lạnh</a>
+    <a href="#" data-category="Máy giặt">Máy giặt</a>
+    <a href="#" data-category="Máy nước nóng">Máy nước nóng</a>
+    <a href="#" data-category="Nồi cơm điện">Nồi cơm điện</a>
+    <a href="#" data-category="Nồi chiên">Nồi chiên</a>
+    <a href="#" data-category="Máy lọc nước">Máy lọc nước</a>
+    <a href="#" data-category="Điện thoại">Điện thoại</a>
+    <a href="#" data-category="Laptop">Laptop</a>
+    <a href="#" data-category="Đồ gia dụng">Đồ gia dụng</a>
+  </div>
+</head>
+<body>
+  <header>
+    <h1>Giỏ Hàng Của Bạn</h1>
+  </header>
+
+  <main>
+    <div id="cart-container">
+      <section id="cart-table-section">
+        <table id="cart-table">
+          <thead>
+            <tr>
+              <th>Ảnh</th>
+              <th>Sản phẩm</th>
+              <th>Giá</th>
+              <th>Số lượng</th>
+              <th>Tổng</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Các sản phẩm trong giỏ hàng sẽ được thêm tại đây -->
+          </tbody>
+        </table>
+        <div id="cart-summary">
+          <p>Tổng cộng: <span id="cart-total">0₫</span></p>
+          <div>
+            <input type="text" id="coupon-code" placeholder="Nhập mã giảm giá">
+            <button id="apply-coupon">Áp dụng</button>
+            <p id="discount-message" style="color: green;"></p>
+        </div>
+        
+          <button id="clear-cart">Xóa Tất Cả</button>
+          <button id="checkout-button">Thanh Toán</button>
+          
+        </div>
+        
+      </section>
+      <!-- Modal Thanh Toán -->
+<div id="checkout-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Thông Tin Thanh Toán</h2>
+    <form id="checkout-form">
+      <label for="full-name">Họ và tên:</label>
+      <input type="text" id="full-name" required>
+
+      <label for="phone">Số điện thoại:</label>
+      <input type="tel" id="phone" required>
+
+      <label for="address">Địa chỉ giao hàng:</label>
+      <textarea id="address" required></textarea>
+
+      <label for="payment-method">Phương thức thanh toán:</label>
+      <select id="payment-method" required>
+          <option value="cod">Thanh toán khi nhận hàng (COD)</option>
+          <option value="bank">Chuyển khoản ngân hàng</option>
+      </select>
+      
+      <!-- Thông tin chuyển khoản (ẩn mặc định) -->
+      <div id="bank-info" style="display: none; text-align: center; margin-top: 10px;">
+          <p><strong>Chuyển khoản đến:</strong></p>
+          <p>💳 <strong>Ngân hàng: Vietcombank</strong></p>
+          <p>🔢 <strong>STK:</strong> <span id="account-number">123456789</span> 
+              <button id="copy-account">📋 Copy</button>
+          </p>
+          <p><strong>Chủ tài khoản:</strong> Nguyễn Văn A</p>
+          <p><strong>Nội dung chuyển khoản:</strong> <span id="payment-note">Mua hàng - 0123456789</span></p>
+          <img src="qrcode.png" alt="Mã QR" width="150">
+      </div>
+      
+      <button type="submit" id="confirm-payment">Xác nhận thanh toán</button>
+    </form>
+  </div>
+</div>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Giỏ Hàng</p>
+  </footer>
+
+  <script src="./js/cart.js"></script>
+  <script src="./js/products.js"></script>
+</body>
+</html>

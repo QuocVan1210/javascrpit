@@ -1,0 +1,240 @@
+{
+  "users": [
+    {
+      "id": "admin1",
+      "firstname": "Admin",
+      "lastname": "Admin",
+      "username": "admin",
+      "password": "admin123",
+      "role": "admin"
+    },
+    {
+      "firstname": "van",
+      "lastname": "Van",
+      "username": "van123",
+      "password": "1234567",
+      "role": "undefined",
+      "id": "95e4"
+    }
+  ],
+  "products": [
+    {
+      "name": "iPhone 15 128GB | Chính hãng VN/A",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "2.webp",
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời.",
+      "category": "Điện thoại",
+      "star": 4,
+      "id": "3"
+    },
+    {
+      "id": "4",
+      "name": "Xiaomi 14T Pro 12GB 512GB",
+      "category": "Điện thoại",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "3.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "5",
+      "name": "Samsung Galaxy A15 LTE",
+      "category": "Điện thoại",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "4.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "6",
+      "name": "Laptop Masstel E140 Celeron",
+      "category": "Laptop",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "5.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "7",
+      "name": "Laptop Masstel E140 Celeron 1",
+      "category": "Laptop",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "6.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "9",
+      "name": "Laptop Masstel E140 Celeron 3",
+      "category": "Laptop",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "8.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "10",
+      "name": "Nồi chiên không dầu Philips",
+      "category": "Nồi chiên",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "9.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "11",
+      "name": "Nồi chiên không dầu Philips",
+      "category": "Nồi chiên",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "10.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "12",
+      "name": "Máy giặt cửa ngang Electrolux Inverter",
+      "category": "Máy giặt",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "13.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "13",
+      "name": "Máy giặt cửa ngang Electrolux Inverter",
+      "category": "Máy giặt",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "14.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "14",
+      "name": "Máy giặt cửa ngang Electrolux Inverter",
+      "category": "Máy giặt",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "15.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "15",
+      "name": "Máy giặt cửa ngang Electrolux Inverter",
+      "category": "Máy giặt",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "16.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "16",
+      "name": "Tivi Xiaomi A 4K 8",
+      "category": "Tivi",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "17.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "17",
+      "name": "Tivi Xiaomi A 4K 7",
+      "category": "Tivi",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "18.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "18",
+      "name": "Tivi Xiaomi A 4K 6",
+      "category": "Tivi",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "19.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "19",
+      "name": "Tivi Xiaomi A 4K 5",
+      "category": "Tivi",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "20.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "20",
+      "name": "Tivi Xiaomi A 4K 4",
+      "category": "Tivi",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "21.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "21",
+      "name": "Tivi Xiaomi A 4K 3",
+      "category": "Tivi",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "22.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "id": "22",
+      "name": "Tivi Xiaomi A 4K 2",
+      "category": "Tivi",
+      "price": 12990000,
+      "sale": 11990000,
+      "image": "23.webp",
+      "hotdeal": 0,
+      "star": 3.5,
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời."
+    },
+    {
+      "name": "Tivi Xiaomi A 4K 1",
+      "price": 12990000,
+      "sale": 1199000,
+      "image": "24.webp",
+      "description": "Sở hữu thiết kế sang trọng, màn hình siêu mỏng kích thước 58 inch, độ phân giải 4K sắc nét, công nghệ HDR10 tối ưu độ sáng, độ tương phản cho trải nghiệm xem phim tuyệt vời.",
+      "category": "Tivi",
+      "star": 3,
+      "id": "23"
+    }
+  ]
+}

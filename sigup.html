@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Ký</title>
+    <link rel="stylesheet" href="./css/stylelogin.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Form đăng ký -->
+    <div class="signup">
+      <div class="signup__container">
+        <h1>Đăng Ký Tài Khoản</h1>
+        <form id="registrationForm">
+          <h5>Họ</h5>
+          <input type="text" id="firstname" required />
+          
+          <h5>Tên</h5>
+          <input type="text" id="lastname" required />
+          
+          <h5>Tên đăng nhập</h5>
+          <input type="text" id="username" required />
+          
+          <h5>Mật khẩu</h5>
+          <input type="password" id="password" required />
+          
+          <h5>Xác nhận mật khẩu</h5>
+          <input type="password" id="confirmPassword" required />
+          
+          <button type="submit" class="signup__signInButton">Đăng Ký</button>
+          <div class="error-message"></div>
+        </form>
+          
+     
+  
+        <a href="login.html" class="signup__loginButton">Đã có tài khoản? Đăng nhập</a>
+      </div>
+    </div>
+
+    <script src="./js/sigup.js"></script>
+  </body>
+</html>

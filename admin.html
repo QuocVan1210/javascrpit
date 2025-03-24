@@ -1,0 +1,303 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://kit.fontawesome.com/4c86dbce13.js" crossorigin="anonymous"></script>
+    <title>Demo Điện Máy Xanh Web</title>
+    <style>body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+  }
+
+  .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  h1, h2, h3 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+  }
+
+  .product-management, .admin-actions {
+      margin-bottom: 40px;
+  }
+
+  table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+  }
+
+  table th, table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      transition: background-color 0.3s;
+  }
+
+  table th {
+      background-color: #f4f4f4;
+      color: #555;
+  }
+
+  table tr:hover {
+      background-color: #f1f1f1;
+  }
+
+  .product-image {
+      max-width: 100px;
+      height: auto;
+      border-radius: 4px;
+  }
+
+  .edit-product-btn, .delete-product-btn, .edit-user-btn, .delete-user-btn {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      margin-right: 8px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+
+  .edit-product-btn:hover, .delete-product-btn:hover, .edit-user-btn:hover, .delete-user-btn:hover {
+      background-color: #2980b9;
+  }
+
+  .edit-form {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .edit-form h3 {
+      color: #2c3e50;
+      margin-bottom: 15px;
+  }
+
+  .edit-form label {
+      display: block;
+      margin-bottom: 6px;
+      color: #555;
+  }
+
+  .edit-form input[type="text"], .edit-form input[type="number"], .edit-form input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      transition: border-color 0.3s;
+  }
+
+  .edit-form input[type="text"]:focus, .edit-form input[type="number"]:focus, .edit-form input[type="password"]:focus {
+      border-color: #3498db;
+      outline: none;
+  }
+
+  button {
+      background-color: #2ecc71;
+      color: #fff;
+      border: none;
+      padding: 10px 15px;
+      margin-right: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  }
+
+  button:hover {
+      background-color: #27ae60;
+  }
+
+  .cancel-btn {
+      background-color: #e74c3c;
+  }
+
+  .cancel-btn:hover {
+      background-color: #c0392b;
+  }
+
+  .error-message {
+      color: #e74c3c;
+      background-color: #f8d7da;
+      padding: 12px;
+      border-radius: 4px;
+      margin-top: 10px;
+  }
+  #order-details {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+}
+
+/* Khi modal mở */
+#order-details.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Nền mờ */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+  </style>
+  </head>
+  <body>
+    
+        <div class="container">
+            <button id="back-to-home">🏠 Quay về trang chủ</button>
+            <h1 class="page-title">Quản Lý Khách Hàng và Sản Phẩm</h1>
+          
+            <!-- Quản lý sản phẩm -->
+            <div class="product-management">
+                <h2 class="section-title">Quản Lý Sản Phẩm</h2>
+                <table class="product-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên Sản Phẩm</th>
+                            <th>Giá</th>
+                            <th>Hình Ảnh</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu sản phẩm sẽ được hiển thị ở đây -->
+                    </tbody>
+                </table>
+            </div>
+    
+            <!-- Quản lý khách hàng -->
+            <div class="admin-actions">
+                <h2 class="section-title">Quản Lý Khách Hàng</h2>
+                <table class="customer-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tên Khách Hàng</th>
+                            <th>Username</th>
+                            <th>Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu khách hàng sẽ hiển thị ở đây -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+        <!-- Form sửa sản phẩm -->
+        <div class="edit-form" id="editProductForm">
+            <h3>Sửa Sản Phẩm</h3>
+            <label for="editName">Tên Sản Phẩm:</label>
+            <input type="text" id="editName" name="name">
+            <label for="editPrice">Giá:</label>
+            <input type="number" id="editPrice" name="price">
+            <label for="editSale">Giá Bán:</label>
+            <input type="number" id="editSale" name="sale">
+            <label for="editImage">Hình Ảnh:</label>
+            <input type="text" id="editImage" name="image">
+            <label for="editDescription">Mô Tả:</label>
+            <input type="text" id="editDescription" name="description">
+            <label for="editCategory">Danh Mục:</label>
+            <input type="text" id="editCategory" name="category">
+            <label for="editStar">Sao:</label>
+            <input type="number" id="editStar" name="star" step="0.1" min="0" max="5">
+            <button type="button" id="saveProductBtn" data-id="">Lưu</button>
+            <button type="button" class="cancel-btn" id="cancelProductBtn">Hủy</button>
+        </div>
+    
+        <!-- Form sửa người dùng -->
+        <div class="edit-form" id="editUserForm">
+            <h3>Sửa Người Dùng</h3>
+            <label for="editFirstname">Họ:</label>
+            <input type="text" id="editFirstname" name="firstname">
+            <label for="editLastname">Tên:</label>
+            <input type="text" id="editLastname" name="lastname">
+            <label for="editUsername">Tài Khoản:</label>
+            <input type="text" id="editUsername" name="username">
+            <label for="editPassword">Mật Khẩu:</label>
+            <input type="password" id="editPassword" name="password">
+            <label for="editRole">Vai Trò:</label>
+            <input type="text" id="editRole" name="role">
+            <button type="button" id="saveUserBtn" data-id="">Lưu</button>
+            <button type="button" class="cancel-btn" id="cancelUserBtn">Hủy</button>
+        </div>
+        <div class="order-management">
+            <h2>Quản Lý Đơn Hàng</h2>
+            <table id="order-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Khách Hàng</th>
+                        <th>Ngày Mua</th>
+                        <th>Tổng Giá</th>
+                        <th>Trạng Thái</th>
+                        <th>Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dữ liệu đơn hàng sẽ hiển thị ở đây -->
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Chi tiết đơn hàng -->
+        <div class="modal-overlay"></div>
+        <div id="order-details" class="modal">
+            <div class="modal-content">
+                <span id="close-details" class="close">&times;</span>
+                <h3>Chi Tiết Đơn Hàng</h3>
+                <div id="order-info"></div>
+            </div>
+        </div>
+    
+        <script src="./js/admin.js"></script>       <script src="/js/products.js"></script>
+    </body>
+    </html>
+    

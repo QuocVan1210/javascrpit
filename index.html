@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/4c86dbce13.js" crossorigin="anonymous"></script>
+  <title>Demo Điện Máy Xanh Web</title>
+</head>
+<body>
+  <!-- Logo và thanh tìm kiếm -->
+  <div class="box-top-logo">
+    <a href="index.html" id="logo-link">
+      <img src="image/logo.png" alt="Logo" />
+    </a>
+        <input class="search" type="text" placeholder="Bạn tìm gì" />
+    <div id="menuNguoiDung">
+      <!-- Nút Tài khoản -->
+      <a href="#" id="nutTaiKhoan" class="nut-chinh">
+        <i class="fa fa-user"></i>
+        <span id="tenTaiKhoan">Tài khoản</span>
+        <i class="fa fa-chevron-down"></i>
+      </a>
+
+      <!-- Menu khi chưa đăng nhập -->
+      <div id="menuChuaDangNhap" class="menu-noi-dung">
+        <a href="login.html" id="dangNhapLink" class="nut-chinh">
+          <i class="fa fa-sign-in"></i> Đăng nhập
+        </a>
+        <a href="sigup.html" id="dangKyLink" class="nut-chinh">
+          <i class="fa fa-user-plus"></i> Đăng ký
+        </a>
+      </div>
+
+      <!-- Menu sau khi đăng nhập -->
+      <div id="menuDaDangNhap" class="menu-noi-dung">
+        <div class="menu-header">
+          <i class="fa fa-user-circle"></i>
+          <span id="tenNguoiDungHienThi">Tên người dùng</span>
+        </div>
+        <a href="taikhoancuatoi.html">
+          <i class="fa fa-user-circle"></i> Tài khoản của tôi
+        </a>
+        <a href="donhangdamua.html">
+          <i class="fa fa-briefcase"></i> Đơn hàng đã mua
+        </a>
+        <button id="nutDangXuat">
+          <i class="fa fa-sign-out-alt"></i> Thoát tài khoản
+        </button>
+      </div>
+    </div>
+
+    <!-- Giỏ hàng -->
+    <label class="button-top">
+      <a href="cart.html">
+      <i class="fa fa-cart-shopping"></i> Giỏ hàng  </a>
+    </label>
+  </div>
+
+  <!-- Menu danh mục sản phẩm -->
+  <div class="box-menu">
+    <span class="button-menu">
+      <a href="#"><i class="fa-solid fa-bars"></i>&nbsp Tất cả danh mục |</a>
+      <ul class="menu-list">
+        <li data-category="Tivi">Tivi</li>
+        <li data-category="Tủ lạnh">Tủ lạnh</li>
+        <li data-category="Máy giặt">Máy giặt</li>
+        <li data-category="Máy nước nóng">Máy nước nóng</li>
+        <li data-category="Nồi cơm điện">Nồi cơm điện</li>
+        <li data-category="Máy lọc nước">Máy lọc nước</li>
+        <li data-category="Nồi chiên">Nồi chiên</li>
+        <li data-category="Laptop">Laptop</li>
+        <li data-category="Điện thoại">Điện thoại</li>
+        <li data-category="Đồ gia dụng">Đồ gia dụng</li>
+      </ul>
+    </span>
+    <a href="#" data-category="Tivi">Tivi</a>
+    <a href="#" data-category="Tủ lạnh">Tủ lạnh</a>
+    <a href="#" data-category="Máy giặt">Máy giặt</a>
+    <a href="#" data-category="Máy nước nóng">Máy nước nóng</a>
+    <a href="#" data-category="Nồi cơm điện">Nồi cơm điện</a>
+    <a href="#" data-category="Nồi chiên">Nồi chiên</a>
+    <a href="#" data-category="Máy lọc nước">Máy lọc nước</a>
+    <a href="#" data-category="Điện thoại">Điện thoại</a>
+    <a href="#" data-category="Laptop">Laptop</a>
+    <a href="#" data-category="Đồ gia dụng">Đồ gia dụng</a>
+  </div>
+  <!-- Quảng cáo -->
+  <div class="box-banner-quangcao">
+    <img src="image/banner-quangcao.png" alt="Quảng cáo" />
+  </div>
+  <!-- Khu vực hiển thị sản phẩm -->
+  <div class="box-danh-muc" id="product-list">
+    <!-- Sản phẩm sẽ được thêm vào từ JavaScript -->
+  </div>
+  <div id="pagination" class="pagination">
+    <!-- Nút phân trang sẽ được thêm vào từ JavaScript -->
+  </div>
+
+
+
+  <!-- Footer -->
+  <div class="footer">
+    <div class="row">
+      <div class="column">
+        <p><b>ĐIỆN MÁY XANH </b></p>
+        <p><b>Tổng đài hỗ trợ </b>(Miễn phí gọi)</p>
+        <p>Gọi mua: <b>1800.1061</b> (7:30 - 22:00)</p>
+        <p>Kỹ thuật: <b>1800.1764</b> (7:30 - 22:00)</p>
+        <p>Khiếu nại: <b>1800.1063</b> (8:00 - 21:30)</p>
+        <p>Bảo hành: <b>1800.1065</b> (8:00 - 21:00)</p>
+      </div>
+      <div class="column">
+        <p><b> Tặng mã giảm giá</b></p>
+        <input type="text" placeholder="Nhập email" />
+        <input type="text" placeholder="Nhập SĐT" />
+        <button>Nhận mã</button>
+        <p><i>*Áp dụng cho khách mua lần đầu</i></p>
+      </div>
+    </div>
+  </div>  
+
+  <!-- JavaScript -->
+  <script src="./js/products.js" defer></script>
+</body>
+</html>

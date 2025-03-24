@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/4c86dbce13.js" crossorigin="anonymous"></script>
+  <title>Demo Điện Máy Xanh Web</title>
+  <style>/* CSS cho toàn bộ giao diện website bán hàng */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f4f9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Header */
+    .header {
+        background-color: #2c3e50;
+        color: #fff;
+        padding: 15px 20px;
+        text-align: center;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+    }
+    
+    /* Navigation Menu */
+    .nav-menu {
+        background-color: #34495e;
+        padding: 10px 20px;
+    }
+    
+    .nav-menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .nav-menu ul li {
+        margin: 0 15px;
+    }
+    
+    .nav-menu ul li a {
+        color: #ecf0f1;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s;
+    }
+    
+    .nav-menu ul li a:hover {
+        color: #2ecc71;
+    }
+    
+    /* Main Content */
+    .main-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    /* Product Details */
+    .product-detail-container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 700px; /* Giảm chiều rộng tối đa */
+        padding: 15px; /* Giảm padding */
+        margin: 20px auto;
+    }
+    
+    .product-detail img {
+    width: 80%; /* Giảm kích thước xuống 80% */
+    max-width: 300px; /* Giảm max-width để sản phẩm nhỏ hơn */
+}
+    
+    .product-detail h1 {
+        color: #333;
+        margin-bottom: 10px;
+    }
+    
+    .product-detail .price {
+        font-size: 1.5rem;
+        color: #e74c3c;
+        margin-bottom: 10px;
+    }
+    
+    .product-detail p {
+        margin-bottom: 15px;
+    }
+    
+    /* Buttons */
+    .product-detail button {
+        background-color: #2ecc71;
+        color: #fff;
+        border: none;
+        padding: 12px 18px;
+        margin-right: 10px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+    
+    .product-detail button:hover {
+        background-color: #27ae60;
+    }
+    
+    /* Related Products */
+    .related-products {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    
+    .related-products h2 {
+        font-size: 1.6rem;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    
+    .related-product-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .related-product-item,
+.other-product-item {
+    padding: 12px; /* Giảm padding */
+    max-width: 220px; /* Giảm max-width */
+}
+    
+    .related-product-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .related-product-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin-bottom: 10px;
+    }
+    
+    .related-product-item h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: #333;
+    }
+    
+    /* Other Products */
+    .other-products-container {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    
+    .other-products-container h2 {
+        font-size: 1.6rem;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    
+    .other-products-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+    
+    .other-product-item {
+        background-color: #fff;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: transform 0.2s;
+    }
+    
+    .other-product-item:hover {
+        transform: translateY(-5px);
+    }
+    
+    .other-product-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin-bottom: 10px;
+    }
+    
+    .other-product-item h3 {
+        margin-bottom: 10px;
+        font-size: 1.2rem;
+        color: #333;
+    }
+    
+    /* Comments Section */
+    .comments-section {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    
+    .comments-section h2 {
+        font-size: 1.6rem;
+        color: #555;
+        margin-bottom: 15px;
+    }
+    
+    .comments-list {
+        max-height: 300px;
+        overflow-y: auto;
+        margin-bottom: 10px;
+    }
+    
+    textarea {
+        width: 100%;
+        padding: 12px 18px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 1rem;
+        margin-bottom: 10px;
+        resize: none;
+    }
+    
+    button {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s;
+    }
+    
+    button:hover {
+        background-color: #2980b9;
+    }
+    
+    /* Footer */
+    footer {
+        background-color: #2c3e50;
+        color: #fff;
+        text-align: center;
+        padding: 15px 20px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+    </style>
+</head>
+<body>
+  <!-- Logo và thanh tìm kiếm -->
+  <div class="box-top-logo">
+    <a href="index.html" id="logo-link">
+      <img src="image/logo.png" alt="Logo" />
+    </a>
+    <input class="search" type="text" placeholder="Bạn tìm gì" />
+    <label class="button-top">Lịch sử đơn hàng</label>
+    <div id="menuNguoiDung">
+      <!-- Nút Tài khoản -->
+      <a href="#" id="nutTaiKhoan" class="nut-chinh">
+        <i class="fa fa-user"></i>
+        <span id="tenTaiKhoan">Tài khoản</span>
+        <i class="fa fa-chevron-down"></i>
+      </a>
+
+      <!-- Menu khi chưa đăng nhập -->
+      <div id="menuChuaDangNhap" class="menu-noi-dung">
+        <a href="login.html" id="dangNhapLink" class="nut-chinh">
+          <i class="fa fa-sign-in"></i> Đăng nhập
+        </a>
+        <a href="signup.html" id="dangKyLink" class="nut-chinh">
+          <i class="fa fa-user-plus"></i> Đăng ký
+        </a>
+      </div>
+
+      <!-- Menu sau khi đăng nhập -->
+      <div id="menuDaDangNhap" class="menu-noi-dung">
+        <div class="menu-header">
+          <i class="fa fa-user-circle"></i>
+          <span id="tenNguoiDungHienThi">Tên người dùng</span>
+        </div>
+        <a href="taikhoancuatoi.html">
+          <i class="fa fa-user-circle"></i> Tài khoản của tôi
+        </a>
+        <a href="donhangdamua.html">
+          <i class="fa fa-briefcase"></i> Đơn hàng đã mua
+        </a>
+        <button id="nutDangXuat">
+          <i class="fa fa-sign-out-alt"></i> Thoát tài khoản
+        </button>
+      </div>
+    </div>
+
+    <!-- Giỏ hàng -->
+    <label class="button-top">
+      <i class="fa fa-cart-shopping"></i> Giỏ hàng (<span id="cart-counter">0</span>)
+    </label>
+  </div>
+
+  <!-- Menu danh mục sản phẩm -->
+  <div class="box-menu">
+    <span class="button-menu">
+      <a href="#"><i class="fa-solid fa-bars"></i>&nbsp Tất cả danh mục |</a>
+      <ul class="menu-list">
+        <li data-category="Tivi">Tivi</li>
+        <li data-category="Tủ lạnh">Tủ lạnh</li>
+        <li data-category="Máy giặt">Máy giặt</li>
+        <li data-category="Máy nước nóng">Máy nước nóng</li>
+        <li data-category="Nồi cơm điện">Nồi cơm điện</li>
+        <li data-category="Máy lọc nước">Máy lọc nước</li>
+        <li data-category="Nồi chiên">Nồi chiên</li>
+        <li data-category="Laptop">Laptop</li>
+        <li data-category="Điện thoại">Điện thoại</li>
+        <li data-category="Đồ gia dụng">Đồ gia dụng</li>
+      </ul>
+    </span>
+    <a href="#" data-category="Tivi">Tivi</a>
+    <a href="#" data-category="Tủ lạnh">Tủ lạnh</a>
+    <a href="#" data-category="Máy giặt">Máy giặt</a>
+    <a href="#" data-category="Máy nước nóng">Máy nước nóng</a>
+    <a href="#" data-category="Nồi cơm điện">Nồi cơm điện</a>
+    <a href="#" data-category="Nồi chiên">Nồi chiên</a>
+    <a href="#" data-category="Máy lọc nước">Máy lọc nước</a>
+    <a href="#" data-category="Điện thoại">Điện thoại</a>
+    <a href="#" data-category="Laptop">Laptop</a>
+    <a href="#" data-category="Đồ gia dụng">Đồ gia dụng</a>
+  </div>
+
+  <!-- Product Detail -->
+  <div class="product-detail-container">
+    <div id="product-detail"></div>
+    
+    <!-- Phần sản phẩm liên quan -->
+    <div class="related-products">
+      <h2>Sản phẩm liên quan</h2>
+      <div class="related-product-list">
+        <!-- Sản phẩm liên quan sẽ được thêm vào đây từ JavaScript -->
+      </div>
+    </div>
+    <div class="other-products-container">
+        <h2>Các sản phẩm khác</h2>
+        <div class="other-products-list">
+          <!-- Các sản phẩm khác sẽ được thêm vào đây từ JavaScript -->
+        </div>
+      </div>
+      
+    <!-- Bình luận -->
+    <div class="comments-section">
+      <h2>Bình luận</h2>
+      <div class="comments-list">
+        <!-- Các bình luận sẽ được thêm vào đây từ JavaScript -->
+      </div>
+      <textarea placeholder="Viết bình luận của bạn..." rows="4"></textarea>
+      <button>Đăng bình luận</button>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 My Shop. All Rights Reserved.</p>
+  </footer>
+  <script src="./js/products.js"></script>
+  <script src="./js/cart.js"></script>
+</body>
+</html>

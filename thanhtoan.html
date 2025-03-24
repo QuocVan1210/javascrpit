@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh Toán</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .form-container { display: none; padding: 20px; border: 1px solid #ccc; width: 300px; margin: 20px auto; }
+        .form-container label { display: block; margin-top: 10px; }
+        .form-container input, .form-container select { width: 100%; padding: 8px; margin-top: 5px; }
+        .payment-info { display: none; margin-top: 10px; }
+        .btn { margin-top: 15px; padding: 10px; cursor: pointer; background: blue; color: white; border: none; }
+    </style>
+</head>
+<body>
+    <button id="checkout-button">Thanh Toán</button>
+    
+    <div class="form-container" id="checkout-form">
+        <h2>Thông tin thanh toán</h2>
+        <label>Họ tên:</label>
+        <input type="text" id="fullname">
+        
+        <label>Số điện thoại:</label>
+        <input type="text" id="phone">
+        
+        <label>Địa chỉ giao hàng:</label>
+        <input type="text" id="address">
+        
+        <label>Phương thức thanh toán:</label>
+        <select id="payment-method">
+            <option value="cod">Tiền mặt khi nhận hàng (COD)</option>
+            <option value="bank">Chuyển khoản ngân hàng</option>
+            <option value="momo">Ví điện tử (Momo, ZaloPay, VNPay)</option>
+        </select>
+        
+        <div class="payment-info" id="bank-info">
+            <p><strong>Thông tin chuyển khoản:</strong></p>
+            <p>Ngân hàng: Vietcombank</p>
+            <p>Số tài khoản: 123456789</p>
+            <p>Chủ tài khoản: ABC</p>
+        </div>
+        
+        <div class="payment-info" id="momo-info">
+            <p><strong>Quét mã QR để thanh toán:</strong></p>
+            <img src="qrcode.png" alt="QR Code" width="150">
+        </div>
+        
+        <button class="btn" id="confirm-order">Xác nhận đơn hàng</button>
+    </div>
+    
+    <script>
+        document.getElementById("checkout-button").addEventListener("click", function() {
+            document.getElementById("checkout-form").style.display = "block";
+        });
+        
+        document.getElementById("payment-method").addEventListener("change", function() {
+            let method = this.value;
+            document.getElementById("bank-info").style.display = method === "bank" ? "block" : "none";
+            document.getElementById("momo-info").style.display = method === "momo" ? "block" : "none";
+        });
+        
+        document.getElementById("confirm-order").addEventListener("click", function() {
+            let name = document.getElementById("fullname").value;
+            let phone = document.getElementById("phone").value;
+            let address = document.getElementById("address").value;
+            let payment = document.getElementById("payment-method").value;
+            
+            if (!name || !phone || !address) {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+            
+            alert("Đơn hàng đã được xác nhận! Cảm ơn bạn.");
+            document.getElementById("checkout-form").style.display = "none";
+        });
+    </script>
+</body>
+</html>
